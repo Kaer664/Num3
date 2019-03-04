@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,12 +21,27 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView listViewLeft;
+    private TextView tvPm,tvHumidity,tvTemperature,tvCO;
+    private TextView tvNum1Bus1,tvNum1Bus2,tvNum2Bus1,tvNum2Bus2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initLeft();
+        initMain();
+    }
+
+    private void initMain() {
+        tvPm=findViewById(R.id.tvPm);
+        tvHumidity=findViewById(R.id.tvHumidity);
+        tvTemperature=findViewById(R.id.tvTemperature);
+        tvCO=findViewById(R.id.tvCO);
+
+        tvNum1Bus1=findViewById(R.id.tvNum1Bus1);
+        tvNum1Bus2=findViewById(R.id.tvNum1Bus2);
+        tvNum2Bus1=findViewById(R.id.tvNum2Bus1);
+        tvNum2Bus2=findViewById(R.id.tvNum2Bus2);
     }
 
     List<Map<String, Object>> leftData = new ArrayList<>();
