@@ -1,5 +1,8 @@
 package edevelopmentandroidcompanydomain.no3;
 
+import android.Manifest;
+import android.content.Intent;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -72,8 +75,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent intent=null;
         switch (i) {
             case 0:
+                intent=new Intent(this,AccountActivity.class);
+                startActivity(intent);
                 Log.i("TestNum", String.valueOf(i));
                 break;
             case 1:
